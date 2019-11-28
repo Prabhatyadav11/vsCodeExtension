@@ -5,13 +5,15 @@ const branch = require('git-branch');
 var repoName = require('git-repo-name');
 var inActiveTime:Date;
 var activeTime:Date;
+var userName=require('git-user-name');
 
 var url = "http://localhost:3600";
 
 export function activate(context: vscode.ExtensionContext) {
 
 	console.log('Congratulations, your extension "gitswirlvscodeextension" is now active!');
-	
+	var swirlUser:String = userName ();
+	console.log(swirlUser) ;
 	/**
 	 * Finding the repository and branch name
 	 */
@@ -22,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
             branch(`${folderPath}`)
                 .then((branchName: String) => {
                     repoName(folderPath, function (err: String, repoName: String) {
-						vscode.window.setStatusBarMessage("GitSwirl [Repository]:=> " + repoName + " [Branch]:=> " + branchName  );
+						vscode.window.setStatusBarMessage( swirlUser +  "  GitSwirl [Repository]:=>  " + repoName + " [Branch]:=> " + branchName  );
 						console.log(repoName,"reponame",  branchName,"branchName" );
 
 						axios.post(url+"/vscode_extension", {
