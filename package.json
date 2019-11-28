@@ -2,7 +2,7 @@
 	"name": "timecheck",
 	"displayName": "Timecheck",
 	"description": "checking",
-	"version": "5.0.4",
+	"version": "5.1.0",
 	"engines": {
 		"vscode": "^1.40.0"
 	},
