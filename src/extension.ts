@@ -6,7 +6,6 @@ var repoName = require("git-repo-name");
 var inActiveTime: Date;
 var activeTime: Date;
 var userName = require("git-user-name");
-6;
 
 var url = "http://localhost:3600";
 
@@ -19,6 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
   /**
    * Finding the repository and branch name
    */
+  vscode.commands.executeCommand("extension.timecheck");
   let folderPath = vscode.workspace.rootPath;
 
   let disposable = vscode.commands.registerCommand(
