@@ -1,8 +1,8 @@
 {
-  "name": "timecheck",
-  "displayName": "Timecheck",
+  "name": "gitswirl",
+  "displayName": "GitSwirl",
   "description": "checking",
-  "version": "7.0.0",
+  "version": "8.1.1",
   "engines": {
     "vscode": "^1.40.0"
   },
